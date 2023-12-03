@@ -10,15 +10,15 @@ export default async function SetupPage() {
     where: {
       members: {
         some: {
-          id: profile.id
+          profileId: profile.id
         }
       }
     }
   })
+  console.log('server', server)
   if (server) {
-    return redirect(`/server/${server.id}`)
+    return redirect(`/servers/${server.id}`)
   }
-
 
   return (
     <InitialModal />
