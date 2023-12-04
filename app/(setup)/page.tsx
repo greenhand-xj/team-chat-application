@@ -15,7 +15,6 @@ export default async function SetupPage() {
       }
     }
   })
-  console.log('server', server)
   if (server) {
     return redirect(`/servers/${server.id}`)
   }
