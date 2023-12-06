@@ -29,7 +29,6 @@ export const InviteModal = () => {
       setCopied(false)
     }, 1000)
   }
-  console.log('server', server)
   const inviteUrl = `${origin}/invite/${server?.inviteCode}`
   const onNew = async () => {
     try {
