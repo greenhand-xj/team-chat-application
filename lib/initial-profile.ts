@@ -16,11 +16,16 @@ export const initialProfile = async () => {
   })
 
   if (profile) return profile
-
+  let name: string
+  if (user.firstName && user.lastName) {
+    name = `${user.firstName} ${user.lastName}`
+  } else {
+    name = `${user.username}`
+  }
   const newProfile = await db.profile.create({
     data: {
       userId: user.id,
-      name: `${user.firstName} ${user.lastName}`,
+      name,
       email: user.emailAddresses[0].emailAddress,
       imageUrl: user.imageUrl
     }
