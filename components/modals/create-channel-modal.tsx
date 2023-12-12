@@ -32,6 +32,7 @@ import {
   SelectValue,
 } from '../ui/select'
 import qs from 'query-string'
+import { useEffect } from 'react'
 
 const formSchema = z.object({
   name: z
@@ -46,15 +47,23 @@ const formSchema = z.object({
 export const CreateChannelModal = () => {
   const router = useRouter()
   const params = useParams()
-  const { isOpen, onClose, type } = useModalStore()
+  const { isOpen, onClose, type, data } = useModalStore()
+  const { channelType } = data
   const isModalOpen = isOpen && type === 'createChannel'
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
-      type: ChannelType.TEXT,
+      type: channelType || ChannelType.TEXT,
     },
   })
+  useEffect(() => {
+    if (channelType) {
+      form.setValue('type', channelType)
+    } else {
+      form.setValue('type', ChannelType.TEXT)
+    }
+  }, [form, channelType])
   const isLoading = form.formState.isSubmitting
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
