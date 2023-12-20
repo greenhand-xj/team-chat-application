@@ -107,9 +107,9 @@ export const CreateChannelModal = () => {
                     <FormControl>
                       <Input
                         className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                        disabled={isLoading}
                         placeholder="Enter Channel name"
                         {...field}
+                        disabled={isLoading}
                       />
                     </FormControl>
                     <FormMessage />
