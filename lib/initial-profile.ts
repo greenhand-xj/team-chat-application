@@ -1,5 +1,6 @@
 import { currentUser, redirectToSignIn } from "@clerk/nextjs"
 import { db } from "./db"
+import { getRandomName } from "./utils"
 
 
 export const initialProfile = async () => {
@@ -19,8 +20,10 @@ export const initialProfile = async () => {
   let name: string
   if (user.firstName && user.lastName) {
     name = `${user.firstName} ${user.lastName}`
-  } else {
+  } else if (user.username) {
     name = `${user.username}`
+  } else {
+    name = `${getRandomName()}`
   }
   const newProfile = await db.profile.create({
     data: {
