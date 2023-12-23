@@ -1,6 +1,7 @@
 # 全栈DiscordMY: Next.js 13, React, Socket.io, Prisma, Tailwind, MySQL
 
-![Copy of Copy of Copy of Fullstack Twitter Clone (5)](https://github.com/AntonioErdeljac/next13-discord-clone/assets/23248726/14e25e4f-eb83-44dd-8b97-4f2666b89386)
+![image](https://github.com/greenhand-xj/team-chat-application/assets/81698900/16e22013-afb1-40be-b0a2-6410d22708d6)
+
 
 关键功能点:
 
@@ -25,7 +26,7 @@
 ### 克隆仓库
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next13-discord-clone.git
+git clone https://github.com/greenhand-xj/team-chat-application.git
 ```
 
 ### Install packages
