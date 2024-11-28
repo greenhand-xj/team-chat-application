@@ -53,6 +53,12 @@ export const MediaRoom = function ({ chatId, video, audio }: MediaRoomProps) {
       connect={true}
       token={token}
       serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
+      onError={(error) => console.error(error)}
+      // options={{
+      //   publishDefaults: {
+      //     videoCodec: 'h264'
+      //   }
+      // }}
       data-lk-theme="default"
     // style={{ height: '100dvh' }}
     >
