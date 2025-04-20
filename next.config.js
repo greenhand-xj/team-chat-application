@@ -18,4 +18,6 @@ const nextConfig = {
   },
 }
 
+console.log('wodeshjei')
+
 module.exports = nextConfig
