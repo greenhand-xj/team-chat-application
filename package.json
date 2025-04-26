@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "lodash": "^4.2",
+    "lodash": "^4.1.1",
     "@clerk/nextjs": "^4.27.2",
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
